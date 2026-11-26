@@ -1,0 +1,6 @@
+device,lag_mean(ms),lag_jitter_std(ms),lag_min(ms),lag_max(ms)
+Annotator,0.0,0.0,0.0,0.0
+Right_Pocket,0.0,0.0,0.0,0.0
+Left_Pocket,0.0,0.0,0.0,0.0
+Right_Hand,0.0,0.0,0.0,0.0
+Crossbody_Bag,1.43,3.78,0.0,10.0

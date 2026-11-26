@@ -1,0 +1,7 @@
+*.pyc 
+.ipynb_checkpoints/
+noteboks/.ipynb_checkpoints/
+.venv
+.vscode
+data/*
+!data/.gitkeep

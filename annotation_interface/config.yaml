@@ -1,0 +1,20 @@
+server:
+  port: 8050
+  debug: false
+layout:
+  background_color: var(--paper)
+  padding: 20px
+  max_height: 100vh
+  font_color: var(--ink)
+video_player:
+  width: 100%
+  height: auto
+data_schema:
+  time_column: VideoTimelapse
+  time_conversion_factor: 1000
+activities:
+- MARCHA
+- STANDING
+- SITTING
+- WALKING
+- '-1'

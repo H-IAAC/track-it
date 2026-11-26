@@ -1,0 +1,135 @@
+<script src="/static/graph/d3.v4.js"></script>
+
+<style>
+    * { box-sizing: border-box; }
+</style>
+
+<div class="row">
+    <div class="column_left">
+        <% if (data.video) { %>
+            <div class="video_container td">
+                <video controls preload="auto">
+                    <source src="<%= data.path %><%= data.video %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        <% } else { %>
+            <div style="padding: 20px; text-align: center; color: var(--ink-2);">
+                <h3>No video available</h3>
+                <p>This experiment was marked as not having a video.</p>
+            </div>
+        <% } %>
+    </div>
+    <div class="column_right">
+        <div class="graph_subtitles">
+            <b id="offsetTxt">Offset:</b>
+            <input type="text" id="offset" value="0"></input>
+            <button onclick="uploadOffset()" id="offsetBtn">set</button>
+            <canvas style="background-color: red;"></canvas>
+            <label class="graph_subtitles_child">X (value 1)</label>
+            <canvas style="background-color: green;"></canvas>
+            <label class="graph_subtitles_child">Y (value 2)</label>
+            <canvas style="background-color: blue;"></canvas>
+            <label class="graph_subtitles_child">Z (value 3)</label>
+        </div>
+        <% if (data.csv === undefined || data.csv.length === 0) { %>
+            <p>Missing CSV files.</p>
+        <% } else { %>
+            <div>
+                <select id="graph_selector_01">
+                    <% for (var i=0; i < data.csv.length; i++) { %>
+                        <option value='<%= data.csv[i] %>'>
+                            <%= data.csv[i] %>
+                        </option>
+                        <% } %>
+                </select>
+                <div id="svg_graph_01"></div>
+            </div>
+            <div>
+                <select id="graph_selector_02">
+                    <% for (var i=0; i < data.csv.length; i++) { %>
+                        <option value='<%= data.csv[i] %>'>
+                            <%= data.csv[i] %>
+                        </option>
+                        <% } %>
+                </select>
+                <div id="svg_graph_02"></div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<section class="bottom">
+    <div class="center">
+        <button onclick="window.location.href = '/experimentos'" class="btn">Back</button>
+    </div>
+</section>
+
+<script src="/static/graph/graph.js"></script>
+
+<script type="text/javascript">
+    var data_stringified = '<%- JSON.stringify(data) %>';
+    var data = JSON.parse(data_stringified);
+
+    const offset = document.getElementById('offset');
+
+    var graph1 = new Graph("svg_graph_01", data, 1500, offset.value);
+    var graph2 = new Graph("svg_graph_02", data, 1500, offset.value);
+
+    const video = document.querySelector('video');
+    const graph_selector_01 = document.getElementById('graph_selector_01');
+    const graph_selector_02 = document.getElementById('graph_selector_02');
+    const svg_graph_01 = document.getElementById('svg_graph_01');
+    const svg_graph_02 = document.getElementById('svg_graph_02');
+
+    if (video) {
+        svg_graph_01.onclick = function() {
+            let video_timestamp = prompt('Insert timestamp (' + video.currentTime + ')');
+            if (video_timestamp !== null) video.currentTime = video_timestamp;
+        };
+
+        svg_graph_02.onclick = function() {
+            let video_timestamp = prompt('Insert timestamp (' + video.currentTime + ')');
+            if (video_timestamp !== null) video.currentTime = video_timestamp;
+        };
+    }
+
+    graph_selector_01.selectedIndex = -1;
+    graph_selector_02.selectedIndex = -1;
+
+    graph_selector_01.onchange = (event) => {
+        document.getElementById("svg_graph_01").replaceChildren();
+        let currentTime = video ? video.currentTime * 1000 : 0;
+        graph1.createdGraph(graph_selector_01.value, currentTime);
+    }
+
+    graph_selector_02.onchange = (event) => {
+        document.getElementById("svg_graph_02").replaceChildren();
+        let currentTime = video ? video.currentTime * 1000 : 0;
+        graph2.createdGraph(graph_selector_02.value, currentTime);
+    }
+
+    if (video) {
+        video.ontimeupdate = (event) => {
+            if (typeof graph1.x !== "undefined")
+                graph1.update(video.currentTime * 1000);
+
+            if (typeof graph2.x !== "undefined")
+                graph2.update(video.currentTime * 1000);
+        };
+    }
+
+    function uploadOffset(directory) {
+        graph1 = new Graph("svg_graph_01", data, 1500, offset.value);
+        graph2 = new Graph("svg_graph_02", data, 1500, offset.value);
+
+        let currentTime = video ? video.currentTime * 1000 : 0;
+
+        document.getElementById("svg_graph_01").replaceChildren();
+        graph1.createdGraph(graph_selector_01.value, currentTime);
+
+        document.getElementById("svg_graph_02").replaceChildren();
+        graph2.createdGraph(graph_selector_02.value, currentTime);
+    }
+
+</script>

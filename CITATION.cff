@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use this toolkit, please cite it as below."
+title: "Track-It: An Open-Source Toolkit for Synchronized Multimodal Data Collection, Annotation, and Face Anonymization"
+type: software
+license: MIT
+repository-code: "https://github.com/H-IAAC/track-it"
+url: "https://h-iaac.github.io/track-it/"
+authors:
+  - given-names: "Beatriz V. P."
+    family-names: Moura
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: "Marcos M."
+    family-names: Nunes
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: "Gustavo P. C. P."
+    family-names: "da Luz"
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: "Miguel B."
+    family-names: Simoes
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: Victor
+    family-names: Wu
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: "Nicolas H."
+    family-names: Silva
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: "Jaime A. D."
+    family-names: Vargas
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: "Amparo D."
+    family-names: Munoz
+    affiliation: "H.IAAC, Instituto de Pesquisas Eldorado"
+  - given-names: "Saulo A."
+    family-names: Moraes
+    affiliation: "H.IAAC, Instituto de Pesquisas Eldorado"
+  - given-names: "Felipe A. de Paula"
+    family-names: Santos
+    affiliation: "H.IAAC, Instituto de Pesquisas Eldorado"
+  - given-names: Fabio
+    family-names: Grassiotto
+    affiliation: "H.IAAC, Instituto de Pesquisas Eldorado"
+  - given-names: Anderson
+    family-names: Rocha
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: Levy
+    family-names: Boccato
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"
+  - given-names: Edson
+    family-names: Borin
+    affiliation: "H.IAAC, University of Campinas (Unicamp)"

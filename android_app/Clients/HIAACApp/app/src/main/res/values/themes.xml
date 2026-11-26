@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HIAACApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/hiaac_orange</item>
+        <item name="colorPrimaryVariant">@color/hiaac_orange_dark</item>
+        <item name="colorOnPrimary">@color/hiaac_on_accent</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/hiaac_orange</item>
+        <item name="colorSecondaryVariant">@color/hiaac_orange_dark</item>
+        <item name="colorOnSecondary">@color/hiaac_on_accent</item>
+        <item name="colorSurface">@color/hiaac_paper_2</item>
+        <item name="colorOnSurface">@color/hiaac_ink</item>
+        <item name="android:colorBackground">@color/hiaac_paper</item>
+        <item name="android:windowBackground">@color/hiaac_paper</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.HIAAC.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.HIAAC.Medium</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.HIAACApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.HIAACApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.HIAACApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Squared corners, same as the web tools (3-4px). -->
+    <style name="ShapeAppearance.HIAAC.Small" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">3dp</item>
+    </style>
+    <style name="ShapeAppearance.HIAAC.Medium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">4dp</item>
+    </style>
+</resources>

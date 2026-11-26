@@ -1,0 +1,59 @@
+LOG: 2026-06-25 16:42:39 -> hide_faces_using_yolo new buffer
+LOG: 2026-06-25 16:42:39 Modelo encontrado: /usr/src/h-iaac/captureX/postprocessor/yolo11n-pose.pt
+LOG: 2026-06-25 16:42:39 -> VIDEO IN  video_fps: 30.004810533453487
+LOG: 2026-06-25 16:42:39 -> /usr/src/h-iaac/captureX/postprocessor/../preprocessor/_preprocessor/sync [all] [001]/video_5505521315285535067.mp4 video_height: 720 video_width: 480
+LOG: 2026-06-25 16:42:39 -> /usr/src/h-iaac/captureX/postprocessor/../preprocessor/_preprocessor/sync [all] [001]/video_5505521315285535067.mp4 video_fps: 30.004810533453487
+LOG: 2026-06-25 16:42:39 Using device: cuda
+LOG: 2026-06-25 16:43:01 Processado 500 de 23970 frames
+LOG: 2026-06-25 16:43:18 Processado 1000 de 23970 frames
+LOG: 2026-06-25 16:43:36 Processado 1500 de 23970 frames
+LOG: 2026-06-25 16:43:52 Processado 2000 de 23970 frames
+LOG: 2026-06-25 16:44:09 Processado 2500 de 23970 frames
+LOG: 2026-06-25 16:44:25 Processado 3000 de 23970 frames
+LOG: 2026-06-25 16:44:41 Processado 3500 de 23970 frames
+LOG: 2026-06-25 16:44:57 Processado 4000 de 23970 frames
+LOG: 2026-06-25 16:45:13 Processado 4500 de 23970 frames
+LOG: 2026-06-25 16:45:28 Processado 5000 de 23970 frames
+LOG: 2026-06-25 16:45:43 Processado 5500 de 23970 frames
+LOG: 2026-06-25 16:45:59 Processado 6000 de 23970 frames
+LOG: 2026-06-25 16:46:14 Processado 6500 de 23970 frames
+LOG: 2026-06-25 16:46:29 Processado 7000 de 23970 frames
+LOG: 2026-06-25 16:46:45 Processado 7500 de 23970 frames
+LOG: 2026-06-25 16:47:00 Processado 8000 de 23970 frames
+LOG: 2026-06-25 16:47:16 Processado 8500 de 23970 frames
+LOG: 2026-06-25 16:47:32 Processado 9000 de 23970 frames
+LOG: 2026-06-25 16:47:47 Processado 9500 de 23970 frames
+LOG: 2026-06-25 16:48:02 Processado 10000 de 23970 frames
+LOG: 2026-06-25 16:48:17 Processado 10500 de 23970 frames
+LOG: 2026-06-25 16:48:32 Processado 11000 de 23970 frames
+LOG: 2026-06-25 16:48:47 Processado 11500 de 23970 frames
+LOG: 2026-06-25 16:49:03 Processado 12000 de 23970 frames
+LOG: 2026-06-25 16:49:18 Processado 12500 de 23970 frames
+LOG: 2026-06-25 16:49:34 Processado 13000 de 23970 frames
+LOG: 2026-06-25 16:49:48 Processado 13500 de 23970 frames
+LOG: 2026-06-25 16:50:03 Processado 14000 de 23970 frames
+LOG: 2026-06-25 16:50:18 Processado 14500 de 23970 frames
+LOG: 2026-06-25 16:50:33 Processado 15000 de 23970 frames
+LOG: 2026-06-25 16:50:49 Processado 15500 de 23970 frames
+LOG: 2026-06-25 16:51:05 Processado 16000 de 23970 frames
+LOG: 2026-06-25 16:51:21 Processado 16500 de 23970 frames
+LOG: 2026-06-25 16:51:37 Processado 17000 de 23970 frames
+LOG: 2026-06-25 16:51:53 Processado 17500 de 23970 frames
+LOG: 2026-06-25 16:52:08 Processado 18000 de 23970 frames
+LOG: 2026-06-25 16:52:23 Processado 18500 de 23970 frames
+LOG: 2026-06-25 16:52:39 Processado 19000 de 23970 frames
+LOG: 2026-06-25 16:52:55 Processado 19500 de 23970 frames
+LOG: 2026-06-25 16:53:10 Processado 20000 de 23970 frames
+LOG: 2026-06-25 16:53:26 Processado 20500 de 23970 frames
+LOG: 2026-06-25 16:53:42 Processado 21000 de 23970 frames
+LOG: 2026-06-25 16:53:56 Processado 21500 de 23970 frames
+LOG: 2026-06-25 16:54:11 Processado 22000 de 23970 frames
+LOG: 2026-06-25 16:54:26 Processado 22500 de 23970 frames
+LOG: 2026-06-25 16:54:42 Processado 23000 de 23970 frames
+LOG: 2026-06-25 16:54:57 Processado 23500 de 23970 frames
+LOG: 2026-06-25 16:55:11 Processing completed in 12.528146187464396 min.
+LOG: 2026-06-25 16:55:11 {'video_path': '/usr/src/h-iaac/captureX/postprocessor/../preprocessor/_preprocessor/sync [all] [001]/video_5505521315285535067.mp4', 'Formato': 'AVC', 'Perfil de Formato': 'High@L3', 'Codec ID': 'avc1', 'Duração (s)': 798.872, 'Bit rate (kb/s)': 3445539, 'Largura (pixels)': 720, 'Altura (pixels)': 480, 'Taxa de Aspecto': '1.500', 'Taxa de Quadros (FPS)': 30.0, 'Modo de Taxa de Quadros': 'VFR', 'Taxa de Quadros Mínima': None, 'Taxa de Quadros Máxima': None, 'Total de Frames': 23966}
+LOG: 2026-06-25 16:55:11 {'video_path': '//usr/src/h-iaac/captureX/postprocessor/../preprocessor/_postprocessor//sync [all] [001]/facehidden-video_5505521315285535067.mp4', 'Formato': 'AVC', 'Perfil de Formato': 'High@L3.1', 'Codec ID': 'avc1', 'Duração (s)': 798.872, 'Bit rate (kb/s)': 800815, 'Largura (pixels)': 480, 'Altura (pixels)': 720, 'Taxa de Aspecto': '0.667', 'Taxa de Quadros (FPS)': 30.0, 'Modo de Taxa de Quadros': 'CFR', 'Taxa de Quadros Mínima': None, 'Taxa de Quadros Máxima': None, 'Total de Frames': 23966}
+LOG: 2026-06-25 16:55:11 duração v_in 798.872 duração v_out 798.872
+LOG: 2026-06-25 16:55:11 Taxa de Quadros (FPS) v_in 30.0 Taxa de Quadros (FPS) v_out 30.0
+LOG: 2026-06-25 16:55:11 Total de Frames v_in 23966 Total de Frames v_out 23966
