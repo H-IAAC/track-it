@@ -1,3 +1,0 @@
-timestamp,left_label,change_point_name,change_point_time,sensor_ref
-0.05,SITTING,change_point_1,timestamp_local,Value 1
-0.12,STANDING,change_point_2,timestamp_local,Value 1

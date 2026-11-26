@@ -1,8 +1,0 @@
-movement,repetition,start(video),end(video),t0(s),t1(s),duration(s)
-vertical,start,01:15:22,01:17:25,75.22,77.25,2.03
-horizontal,start,01:17:25,01:19:25,77.25,79.25,2.0
-horizontal_position_change,start,01:21:01,01:23:27,81.01,83.27,2.26
-horizontal,repetition 1,01:32:03,01:39:08,92.03,99.08,7.05
-horizontal,repetition 2,10:30:18,10:33:01,630.18,633.01,2.83
-vertical,repetition,10:33:07,10:39:19,633.07,639.19,6.12
-table,repetition,11:25:26,11:37:19,685.26,697.19,11.93

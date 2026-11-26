@@ -1,1 +1,0 @@
-LOG: 2026-06-25 16:55:12 video_5505521315285535067 is invalid! need to check ['//usr/src/h-iaac/captureX/postprocessor/../preprocessor/_postprocessor//sync [all] [001]/waiting/001_sync_all_Vídeo__20240514.090107.csv'] timestamp after drop rows lower than initial timestamp. (Data were collected before recording the video.)
