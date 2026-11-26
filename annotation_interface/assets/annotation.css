@@ -1,0 +1,67 @@
+/* Annotation Interface — on top of the shared H.IAAC theme (assets/hiaac/hiaac.css). */
+body {
+    font-family: var(--font-mono) !important;
+    font-size: 13px;
+    background: var(--paper) !important;
+    color: var(--ink) !important;
+}
+.ann-header { margin: -20px -20px 20px; position: sticky; top: 0; z-index: 50; }
+.ann-mode {
+    display: flex; align-items: center; gap: 10px;
+    height: 32px; padding: 0 12px;
+    background: var(--paper-3); border: 1px solid var(--line-2); border-radius: var(--radius);
+}
+.ann-mode-label { margin: 0; }
+.ann-switch { margin: 0; min-height: 0; padding-left: 2.5em; }
+.ann-switch .form-check-input { border-radius: var(--radius) !important; cursor: pointer; background-color: var(--line-2); border-color: var(--line-2); }
+.ann-switch .form-check-input:checked { background-color: var(--orange); border-color: var(--orange); }
+.ann-switch .form-check-input:focus { box-shadow: 0 0 0 3px var(--orange-bg); }
+
+.ann-card { padding: 12px !important; margin-bottom: 14px !important; }
+
+label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 5px; }
+
+summary { font-size: 11px !important; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2) !important; }
+
+.form-control {
+    height: 32px; border-radius: var(--radius) !important;
+    background: var(--paper) !important; color: var(--ink) !important;
+    border: 1px solid var(--line-2) !important;
+    font-family: var(--font-mono); font-size: 12px;
+}
+.form-control:focus { border-color: var(--orange) !important; box-shadow: 0 0 0 3px var(--orange-bg) !important; }
+.form-control::placeholder { color: var(--ink-3); }
+
+.btn { border-radius: var(--radius) !important; font-family: var(--font-mono); }
+
+/* dcc.Dropdown */
+.dash-dropdown, .Select-control, .dash-dropdown-trigger {
+    border-radius: var(--radius) !important;
+    font-family: var(--font-mono); font-size: 12px;
+}
+.dash-dropdown-trigger, .Select-control {
+    background: var(--paper) !important; color: var(--ink) !important;
+    border: 1px solid var(--line-2) !important; min-height: 32px;
+}
+.dash-dropdown-content, .Select-menu-outer {
+    background: var(--paper-2) !important; color: var(--ink) !important;
+    border: 1px solid var(--line-2) !important; border-radius: var(--radius) !important;
+}
+
+/* Graph containers */
+.js-plotly-plot .plotly .modebar-btn path { fill: var(--ink-3); }
+
+.toast { border-radius: var(--radius-lg) !important; background: var(--paper-2) !important; color: var(--ink) !important; border: 1px solid var(--line-2) !important; font-family: var(--font-mono); }
+.toast-header { background: var(--paper-3) !important; color: var(--ink) !important; border-bottom: 1px solid var(--line) !important; }
+
+#no-video-message, #file_name-protocol { color: var(--ink-3) !important; }
+/* Plotly: let the card paper show through (also covers the default empty figure) */
+.js-plotly-plot .plotly .main-svg { background: transparent !important; }
+.js-plotly-plot .bglayer rect.bg { fill: transparent !important; }
+.js-plotly-plot .xtick text, .js-plotly-plot .ytick text { fill: var(--ink-2) !important; }
+.js-plotly-plot .gridlayer path { stroke: var(--line) !important; }
+.js-plotly-plot .g-gtitle text, .js-plotly-plot .g-xtitle text, .js-plotly-plot .g-ytitle text { fill: var(--ink-3) !important; }
+
+/* Dark theme: keep Plotly change-point labels and lines readable */
+[data-theme="dark"] .js-plotly-plot .annotation-text,
+[data-theme="dark"] .js-plotly-plot .shapelayer path { filter: brightness(1.6); }

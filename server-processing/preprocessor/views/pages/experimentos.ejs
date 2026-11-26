@@ -1,0 +1,160 @@
+<div class="center">
+    <h1>Experiments</h1>
+</div>
+<div>
+    <% for (var i=0; i < experimentos.length; i++) { %>
+        <% console.log(experimentos[i].content) %>
+        <% if (experimentos[i].content !== 0) { %>
+            <div class="center">
+                <div class="card">
+                    <div class="card-container">
+                        <h3>
+                            <b>
+                                <%= experimentos[i].experiment %> [<%= experimentos[i].user %>]
+                            </b>
+<!--                             <i onclick="onClickDelete('<%= experimentos[i].directory %>')" class="material-icons"
+                                style="float: right;">delete_forever</i> -->
+                        </h3>
+                        <h4>
+                            <%= experimentos[i].activity %>
+                        </h4>
+                        <p>
+                            <%= new Date(experimentos[i].time).toString() %>
+                        </p>
+                        <p>
+                            <a onclick="onClickFiles('<%= experimentos[i].directory %>')" href="#">Content: <%=
+                                experimentos[i].content %>
+                                    files</a>
+                        </p>
+                        <% if (experimentos[i].error > 0) { %>
+                            <p class="card-error">Post Processor Error! Check the 'err.log' file.</p>
+                        <% } %>
+
+                        <% if (experimentos[i].videoAvailable === false) { %>
+                            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                                <button onclick="onClickUpload('<%= experimentos[i].directory %>')" style="flex: 1;">Upload</button>
+                                <button onclick="onClickNoVideo('<%= experimentos[i].directory %>')" class="btn-muted" style="flex: 1;">No Video</button>
+                            </div>
+                        <% } else if (!experimentos[i].hasPostProcessorContent) { %>
+                            <p><button class="btn-waiting">Waiting post-processor execution</button></p>
+                        <% } else { %>
+                            <div id="video-state-<%= i %>" data-dir="<%= experimentos[i].directory %>" data-has-anonymized="<%= experimentos[i].hasAnonymizedVideo %>" style="min-height: 40px">
+                                <% if (experimentos[i].hasAnonymizedVideo) { %>
+                                    <p><button onclick="onClickWatch('<%= experimentos[i].directory %>')">Watch</button></p>
+                                <% } else { %>
+                                    <!-- Fallback until JS loads or if Face Masking Studio is offline -->
+                                    <p id="watch-btn-<%= i %>"><button onclick="onClickWatch('<%= experimentos[i].directory %>')">Watch</button></p>
+                                    <div id="loading-container-<%= i %>" style="display: none;">
+                                        <p style="margin: 0; font-size: 14px" id="status-text-<%= i %>">Anonymizing video...</p>
+                                        <progress id="progress-bar-<%= i %>" value="0" max="100" style="width: 100%"></progress>
+                                    </div>
+                                <% } %>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
+</div>
+<section class="bottom">
+
+</section>
+
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const containers = document.querySelectorAll('[id^="video-state-"]');
+        containers.forEach(container => {
+            const hasAnonymized = container.getAttribute('data-has-anonymized') === 'true';
+            const expId = container.getAttribute('data-dir');
+            const idx = container.id.replace('video-state-', '');
+            
+            if (!hasAnonymized) {
+                fetch(`http://localhost:8000/api/video/dataset:${encodeURIComponent(expId)}/metadata`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.state && (data.state === 'TRACKING' || data.state === 'RENDERING' || data.state === 'TRACKED')) {
+                            document.getElementById(`watch-btn-${idx}`).style.display = 'none';
+                            const loadingCont = document.getElementById(`loading-container-${idx}`);
+                            loadingCont.style.display = 'block';
+                            
+                            const ws = new WebSocket(`ws://localhost:8000/ws/progress/dataset:${expId}`);
+                            const pBar = document.getElementById(`progress-bar-${idx}`);
+                            const sText = document.getElementById(`status-text-${idx}`);
+                            
+                            ws.onmessage = (event) => {
+                                const msg = JSON.parse(event.data);
+                                if (msg.type === 'tracking_progress' || msg.type === 'render_progress') {
+                                    const stateStr = msg.type === 'tracking_progress' ? 'Tracking' : 'Rendering';
+                                    const percent = msg.total > 0 ? Math.round((msg.frame / msg.total) * 100) : 0;
+                                    
+                                    // Scale to 0-50% for tracking, 50-100% for rendering
+                                    let overallPercent = percent;
+                                    if (msg.type === 'tracking_progress') {
+                                        overallPercent = Math.round(percent / 2);
+                                    } else {
+                                        overallPercent = 50 + Math.round(percent / 2);
+                                    }
+                                    
+                                    pBar.value = overallPercent || 0;
+                                    sText.innerText = `Anonymizing... ${stateStr} (${overallPercent}%)`;
+                                } else if (msg.type === 'finished') {
+                                    sText.innerText = "Finished!";
+                                    pBar.value = 100;
+                                    setTimeout(() => window.location.reload(), 1500);
+                                } else if (msg.type === 'error') {
+                                    sText.innerText = "Error: " + msg.message;
+                                    sText.style.color = "var(--red)";
+                                }
+                            };
+                        }
+                    })
+                    .catch(err => {
+                        // Face masking offline or no video. Leave it showing the Watch button.
+                    });
+            }
+        });
+    });
+
+
+    function onClickFiles(directory) {
+        window.location.href = encodeURI('/download?experiment=' + directory);
+    }
+
+    function onClickUpload(directory) {
+        window.location.href = encodeURI('/upload/?directory=' + directory);
+    }
+
+    function onClickWatch(directory) {
+        window.location.href = encodeURI('/experimentos/watch?experiment=' + directory);
+    }
+
+    function onClickDelete(directory) {
+        let text = "Remove files related to " + directory + "?";
+        if (confirm(text) == true) {
+            alert('TODO');
+        }
+    }
+
+    function onClickNoVideo(directory) {
+        if (!confirm('Mark this experiment as having NO video? CSVs will be processed as-is.')) return;
+        
+        fetch('/api/no_video', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ directory: directory })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Experiment marked as No Video! The post-processor will now process the CSVs.');
+                window.location.reload();
+            } else {
+                alert('Error: ' + data.status);
+            }
+        })
+        .catch(err => alert('Request failed: ' + err));
+    }
+
+</script>

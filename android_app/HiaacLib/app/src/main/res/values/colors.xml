@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- H.IAAC palette (mirrors shared/hiaac-theme/web/hiaac.css). -->
+<resources>
+    <color name="hiaac_orange">#FFFF9D1C</color>
+    <color name="hiaac_orange_hi">#FFFBBE6E</color>
+    <color name="hiaac_orange_dark">#FFE68C19</color>
+    <color name="hiaac_indigo">#FF5750C4</color>
+    <color name="hiaac_indigo_dark">#FF3F39A0</color>
+    <color name="hiaac_paper">#FFF4F0E9</color>
+    <color name="hiaac_paper_2">#FFFBF9F4</color>
+    <color name="hiaac_ink">#FF1D1A16</color>
+    <color name="hiaac_ink_2">#FF6C675E</color>
+    <color name="hiaac_line">#FFE2DCCF</color>
+    <color name="hiaac_sage">#FF5D7F4C</color>
+    <color name="hiaac_blue">#FF3A6DB0</color>
+    <color name="hiaac_red">#FFB8392B</color>
+    <color name="hiaac_logo_gray">#FF7D7C7B</color>
+    <color name="hiaac_on_accent">#FFFFFFFF</color>
+
+    <!-- Legacy names kept for existing references. -->
+    <color name="purple_200">@color/hiaac_orange_hi</color>
+    <color name="purple_500">@color/hiaac_orange</color>
+    <color name="purple_700">@color/hiaac_orange_dark</color>
+    <color name="teal_200">@color/hiaac_orange_hi</color>
+    <color name="teal_700">@color/hiaac_orange_dark</color>
+    <color name="black">@color/hiaac_ink</color>
+    <color name="white">@color/hiaac_paper</color>
+    <color name="blue">@color/hiaac_blue</color>
+    <color name="red">@color/hiaac_red</color>
+    <color name="gray">@color/hiaac_ink_2</color>
+    <color name="inprogress">#34FF2828</color>
+</resources>

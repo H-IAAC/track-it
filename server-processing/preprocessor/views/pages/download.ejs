@@ -1,0 +1,25 @@
+<div>
+    <p>Uploaded Files:</p>
+    <% for (var i=0; i < files.pre.length; i++) { %>
+        <div>
+            <!--Don't show files with .video extension--> 
+            <a href="pre<%= files.pre[i].path %>"><%= files.pre[i].name%></a> - <%= files.pre[i].size%>
+        </div>
+        <% } %>
+</div>
+</br></br>
+<div>
+    <p>Post-processing:</p>
+    <% for (var i=0; i < files.post.length; i++) { %>
+        <div>
+            <!--Don't show files with .video extension--> 
+            <a href="pos<%= files.post[i].path %>"><%= files.post[i].name%></a> - <%= files.post[i].size%>
+        </div>
+        <% } %>
+</div>
+
+<section class="bottom">
+    <div class="center">
+        <button onclick="window.history.back()">Back</button>
+    </div>
+</section>

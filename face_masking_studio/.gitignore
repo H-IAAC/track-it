@@ -1,0 +1,56 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.Python
+
+# Virtualenvs
+.venv/
+venv/
+env/
+ENV/
+backend/.venv/
+
+# ---- Runtime / data ----
+*.log
+
+# Session / temp artifacts
+*.tmp
+tmp/
+
+# ---- Env / secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Caches / tooling ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Editor / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- Models (large weights — descomente p/ ignorar) ----
+# backend/models/*.onnx
+# backend/models/*.pt
+
+# ---- Videos data (ignora conteúdo, mantém só o esqueleto de pastas) ----
+# Ignora tudo dentro de videos/, mas reinclui as pastas (p/ git descer nelas)
+# e os .gitkeep, que ficam versionados só para a estrutura aparecer no repo.
+videos/**
+!videos/**/
+!videos/**/.gitkeep
+
+wheels/
+
+.zip

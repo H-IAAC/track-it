@@ -1,0 +1,7 @@
+# Optional detection methods for the Face Masking Studio.
+# The studio itself only needs requirements.txt (ONNX, MIT code).
+# Ultralytics is AGPL-3.0 and pulls in PyTorch; install only if you accept that license.
+--extra-index-url https://download.pytorch.org/whl/cpu
+mediapipe==0.10.21
+ultralytics==8.4.172
+torch==2.14.1+cpu

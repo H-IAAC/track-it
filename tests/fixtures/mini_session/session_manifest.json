@@ -1,0 +1,34 @@
+{
+  "session_id": "mini_session",
+  "artifacts": {
+    "raw_video": "video_mini.mp4",
+    "anonymized_video": "mini_session_masked_0.mp4",
+    "clean_sensors": [
+      "sensors/Accelerometer_Backpack.csv",
+      "sensors/Accelerometer_Left Pocket.csv",
+      "sensors/Accelerometer_Right Pocket.csv",
+      "sensors/Accelerometer_Right Hand.csv",
+      "sensors/Accelerometer_Annotator.csv",
+      "sensors/LinearAccelerometer_Backpack.csv",
+      "sensors/LinearAccelerometer_Left Pocket.csv",
+      "sensors/LinearAccelerometer_Right Pocket.csv",
+      "sensors/LinearAccelerometer_Right Hand.csv",
+      "sensors/LinearAccelerometer_Annotator.csv",
+      "sensors/Gyroscope_Backpack.csv",
+      "sensors/Gyroscope_Left Pocket.csv",
+      "sensors/Gyroscope_Right Pocket.csv",
+      "sensors/Gyroscope_Right Hand.csv",
+      "sensors/Gyroscope_Annotator.csv"
+    ],
+    "annotation_files": [
+      "annotations/mini_session_Ann_G.csv",
+      "annotations/mini_session_Ann_m.csv",
+      "annotations/mini_session_Ann_V.csv"
+    ]
+  },
+  "pipeline_status": {
+    "server_processed": true,
+    "face_masked": true,
+    "annotated": true
+  }
+}

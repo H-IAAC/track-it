@@ -1,0 +1,10 @@
+# Test-only dependencies for the tests/ suite.
+# The unit tests that import the Masking Studio backend also need that
+# component's own requirements (face_masking_studio/backend/requirements.txt);
+# install those too to run them instead of skipping.
+pytest>=8.0
+pytest-cov>=5.0
+requests>=2.31
+pandas>=2.0
+numpy>=1.24
+black==26.10.1   # pinned so local and CI format identically

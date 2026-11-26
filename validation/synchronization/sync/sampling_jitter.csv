@@ -1,0 +1,6 @@
+device,n_samples,dt_mean(ms),dt_jitter_std(ms),dt_min(ms),dt_max(ms),dt_outside_±20ms
+Annotator,334,100.0,0.0,100.0,100.0,0
+Right_Pocket,334,100.0,0.0,100.0,100.0,0
+Left_Pocket,334,100.0,0.0,100.0,100.0,0
+Right_Hand,336,100.0,0.0,100.0,100.0,0
+Crossbody_Bag,334,100.0,0.0,100.0,100.0,0
